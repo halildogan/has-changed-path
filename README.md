@@ -1,7 +1,7 @@
 # Has Changed Path - GitHub Action
 
 <p align="left">
-  <a href="https://github.com/MarceloPrado/has-changed-path/actions"><img alt="has-changed-path status" src="https://github.com/MarceloPrado/has-changed-path/workflows/unit-tests/badge.svg"></a>
+  <a href="https://github.com/halildogan/has-changed-path/actions"><img alt="has-changed-path status" src="https://github.com/halildogan/has-changed-path/workflows/unit-tests/badge.svg"></a>
 </p>
 
 This action outputs whether a path or combination of paths has changed in the previous commit.
@@ -48,7 +48,7 @@ jobs:
         with:
           fetch-depth: 100
 
-      - uses: marceloprado/has-changed-path@v1
+      - uses: halildogan/has-changed-path@v1
         id: changed-front
         with:
           paths: packages/front
@@ -77,7 +77,7 @@ jobs:
         with:
           fetch-depth: 100
 
-      - uses: marceloprado/has-changed-path@v1
+      - uses: halildogan/has-changed-path@v1
         id: changed-front
         with:
           paths: packages/front packages/common
@@ -110,14 +110,14 @@ jobs:
           repsitory: my-org/my-tools
           path: my-tools
 
-      - uses: marceloprado/has-changed-path@v1
+      - uses: halildogan/has-changed-path@v1
         id: changed-main
         with:
           paths: packages/front
         env:
           SOURCE: main
 
-      - uses: marceloprado/has-changed-path@v1
+      - uses: halildogan/has-changed-path@v1
         id: changed-my-tools
         with:
           paths: somewhere/else
@@ -135,7 +135,7 @@ jobs:
 
 ## How it works?
 
-The action itself is pretty simple - take a look at [`src/hasChanged.js`](https://github.com/MarceloPrado/has-changed-path/blob/master/src/hasChanged.js) ;) .
+The action itself is pretty simple - take a look at [`src/hasChanged.js`](https://github.com/halildogan/has-changed-path/blob/master/src/hasChanged.js) ;) .
 
 Basically, we compare the latest HEAD with the previous one using `git diff` command. This allows us to effectively detect changes in most cases (squashed merges and merges with merge commit).
 
